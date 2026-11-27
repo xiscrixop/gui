@@ -1,6 +1,5 @@
-
 -- XiZen v1.5.21 | lightweight source-protection wrapper
--- Requires an environment where loadstring is available.
+-- Requires an environment where loadstring and bit32 are available.
 -- This is obfuscation, not cryptographic protection.
 
 local payload = [[
@@ -24291,6 +24290,9 @@ iI466tCfhKceyvDq0c965qcejELiucgAKFPbgom+8Wzss9OgMeaxA6ZyPPDyDc4rwDeQTT5lw4vp2fiD
 EC2kc3Ls3I7geZVmgnC/lJSh7x9QJUNo4IMZ/InmA6CKoDVLIHo9fbUHTGubsGOYW+CyEVBgm00iqKKHMMat2wot9CR1tojpi1GeetoCnAY1bZgbzXdXIvdq
 WkwClld3BjHwWfsBDC7v9bZ/p+hceTMOtOKyGG77mp0BlcmU
 ]]
+
+-- IMPORTANT: remove formatting newlines before Base64 decoding.
+payload = payload:gsub("%s+", "")
 
 local alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
 local map = {}
